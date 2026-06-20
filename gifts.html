@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gifts 🎁</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#EEF4FB;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.gifts-section{
+    text-align:center;
+    width:90%;
+    max-width:1000px;
+}
+
+h1{
+    color:#4A6FA5;
+    font-size:45px;
+    margin-bottom:5px;
+}
+
+.subtitle{
+    color:#5F6F81;
+    margin-bottom:30px;
+}
+
+.gift-frame{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.slot{
+    width:180px;
+    height:250px;
+    background:#DCEAF7;
+    border:5px solid white;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    overflow:hidden;
+    border-radius:8px;
+    position:relative;
+}
+
+.slot:nth-child(1){
+    transform:rotate(-3deg);
+}
+
+.slot:nth-child(2){
+    transform:rotate(2deg);
+}
+
+.slot:nth-child(3){
+    transform:rotate(-2deg);
+}
+
+.slot:nth-child(4){
+    transform:rotate(3deg);
+}
+
+.slot::before{
+    content:"💙";
+    position:absolute;
+    font-size:35px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.slot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transform:scale(0.8);
+    transition:0.8s;
+}
+
+.slot img.show{
+    opacity:1;
+    transform:scale(1);
+}
+
+button{
+    margin-top:30px;
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:#6B9AC4;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#5A89B5;
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="gifts-section">
+
+    <h1>Unwrapping Your Gifts 🎁</h1>
+    <p class="subtitle">One by one...</p>
+
+    <div class="gift-frame">
+        <div class="slot"><img id="img1"></div>
+        <div class="slot"><img id="img2"></div>
+        <div class="slot"><img id="img3"></div>
+        <div class="slot"><img id="img4"></div>
+        <div class="slot"><img id="img5"></div>
+        <div class="slot"><img id="img6"></div>
+    </div>
+
+    <button id="nextBtn">Open Gift 🎁</button>
+
+</div>
+
+<script>
+
+const photos = [
+    "aks1.jpeg",
+    "aks2.jpeg",
+    "aks3.jpeg",
+    "aks4.jpeg",
+    "aks5.jpeg",
+    "aks6.jpeg"
+];
+
+let current = 0;
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+
+    if(current < photos.length){
+
+        let img = document.getElementById(`img${current+1}`);
+
+        img.src = photos[current];
+
+        setTimeout(()=>{
+            img.classList.add("show");
+        },100);
+
+        current++;
+
+        if(current === photos.length){
+            document.getElementById("nextBtn").innerText =
+            "One Last Gift ❤️";
+        }
+
+    }else{
+        window.location.href = "lastgift.html";
+    }
+
+});
+
+</script>
+
+</body>
+</html>

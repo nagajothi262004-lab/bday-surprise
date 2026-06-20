@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Question</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#000428,#004e92);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+    width:80%;
+    max-width:700px;
+}
+
+.small-text{
+    color:#ffb6c1;
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+h1{
+    color:white;
+    font-size:48px;
+    line-height:1.4;
+    text-shadow:0 0 15px rgba(255,255,255,0.4);
+    margin-bottom:50px;
+}
+
+.option{
+    width:100%;
+    background:rgba(255,255,255,0.08);
+    border:2px solid #4da6ff;
+    color:white;
+    padding:22px;
+    margin:18px 0;
+    border-radius:20px;
+    font-size:22px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.option:hover{
+    transform:scale(1.03);
+    background:rgba(255,255,255,0.15);
+}
+
+.footer{
+    margin-top:30px;
+    color:#ff69b4;
+    font-size:22px;
+}
+</style>
+
+<script>
+function goNext(){
+
+alert("Honestly... all three are correct 😌💙");
+
+window.location.href="gifts.html";
+
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="small-text">
+🎁 Before opening your birthday surprise...
+</div>
+
+<h1>
+What's one thing you've done countless times?
+</h1>
+
+<button class="option" onclick="goNext()">
+💬 Listening to my polambal 
+</button>
+
+<button class="option" onclick="goNext()">
+🧸 Tolerating my torture 
+</button>
+
+<button class="option" onclick="goNext()">
+💙 Starting the conversation after every fight 
+</button>
+
+<div class="footer">
+✨ ❤️ ✨
+</div>
+
+</div>
+
+</body>
+</html>
